@@ -1,0 +1,28 @@
+{
+    "name": "universe/website-skeleton",
+    "description": "Universe PHP Framework WebSite Skeleton",
+    "keywords": ["universe", "framework"],
+    "license": "MIT",
+    "type": "project",
+    "authors":
+    [
+        {
+            "name": "Volkan ŞENGÜL",
+            "email": "iletisim@volkansengul.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "universe/universe": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
