@@ -22,6 +22,9 @@ try {
         case 'create':
             $cmd->create($command,$argv);
             break;
+        case 'help':
+            $cmd->list();
+            break;
         case 'list':
             $cmd->list();
             break;
