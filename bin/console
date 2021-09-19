@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+use Universe\Command\Command;
+set_time_limit(0);
+require __DIR__
+    . DIRECTORY_SEPARATOR . '..'
+    . DIRECTORY_SEPARATOR . 'vendor'
+    .DIRECTORY_SEPARATOR.'autoload.php';
+try {
+
+    if (count($argv)===1){
+        $cmdGroup = 'list';
+    } else {
+        $commands  = explode(':',$argv[1]);
+        $cmdGroup = $commands[0];
+        $command = $commands[1];
+    }
+    $cmd = new Command(realpath('./') . DIRECTORY_SEPARATOR);
+
+    switch($cmdGroup){
+        case 'create':
+            $cmd->create($command,$argv);
+            break;
+        case 'list':
+            $cmd->list();
+            break;
+        default:
+            $cmd->list();
+            break;
+    }
+
+} catch (Exception $e){
+    echo 'err : '.$e->getMessage();
+}
